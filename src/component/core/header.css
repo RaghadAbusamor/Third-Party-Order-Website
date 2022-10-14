@@ -1,0 +1,27 @@
+.webisteHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 2px 4px 7px 0px rgb(201, 197, 197);
+
+  }
+  
+  .webisteHeader > .left > h1 {
+    font-size: 30px;
+    color: #33C2C7;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  
+  
+  .webisteHeader > .left > h1 > img {
+    height: 90px;
+    width: auto;
+    margin-right: 5px;
+  }
