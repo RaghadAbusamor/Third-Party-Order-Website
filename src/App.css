@@ -5,12 +5,7 @@
   
 
 }
-/* .App > .home{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-   
-} */
+
 .App > .home{
   display: flex;
   flex-direction: column;
