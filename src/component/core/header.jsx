@@ -1,4 +1,6 @@
 import React from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './header.css';
 
 const Header = props => {
@@ -9,6 +11,9 @@ const Header = props => {
         <img src="./logo3.svg" alt="Nemo" />
         Third party order
       </h1>
+    </div>
+    <div className="right">
+    <button> ☰</button>
     </div>
   </header>
   );
