@@ -1,20 +1,17 @@
-
 import React from 'react';
+import './input.css';
 
 /**
- *  @param { React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement> & {
- * label?: string;
- * }} props
- *  
- * b
- * 
+ * Renders an input element.
+ * @param {React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
+ *  label?: string;
+ * }} props 
  */
-
 const Input = props => {
   const { label, ...inputProps } = props;
 
   return (
-    <div className="">
+    <div className="input-group">
       {
         label ? (
           <label>

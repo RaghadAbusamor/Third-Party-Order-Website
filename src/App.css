@@ -2,11 +2,11 @@
   text-align: center;
   /* display: flex;
   flex-direction: column; */
-  
+
 
 }
 
-.App > .home{
+.App>.home {
   display: flex;
   flex-direction: column;
   width: 100%;

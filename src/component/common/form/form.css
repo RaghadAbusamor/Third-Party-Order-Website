@@ -1,0 +1,35 @@
+.wrapper-bg {
+    background-color: rgb(252, 243, 243);
+    background-color: rgb(238, 223, 204);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75rem;
+    opacity: .7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;  /*   remove this line to show the form  !!    */
+
+}
+
+
+
+.wrapper-bg>.wrapper {
+    position: relative;
+    top: -10rem;
+    padding: 30px;
+    width: 100%;
+    height: 25rem;
+    max-width: 640px;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(12, 63, 65);
+    border: 5px solid rgb(129, 184, 185);
+
+}
+
+.wrapper-bg>.wrapper>form>h1 {
+    color: aliceblue;
+}
