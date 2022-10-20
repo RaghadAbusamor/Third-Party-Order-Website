@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './header.css';
 
 const Header = props => {
+
+
   return (
     <header className="webisteHeader">
       <div className="left">

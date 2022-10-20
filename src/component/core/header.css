@@ -7,8 +7,17 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-
 }
+
+/* @media only screen and (min-width :1000px) {
+  .webisteHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+  }
+} */
+
 
 .webisteHeader>.left>h1 {
   font-size: 30px;

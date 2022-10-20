@@ -12,6 +12,7 @@
     appearance: none;
     border-radius: 3px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin: 0.5rem;
   }
   
   .input-group > label {
@@ -35,4 +36,11 @@
     border-color: #86b7fe;
     outline: 0;
     box-shadow: 0px 0px 11px 2px #33C2C7 ;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  
+    padding: 0.375rem 2rem;
+
+
+
   }
