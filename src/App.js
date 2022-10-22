@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+  import './App.css';
 import HomePage from './pages/home/home';
 import Header from './component/core/header';
 

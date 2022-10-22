@@ -12,7 +12,7 @@ const Form = (props) => {
     const [BD, setBD] = useState("");
     const [location, setLocation] = useState("");
     const [phone, setPhone] = useState("");
-
+  
 
     const submitHandeller = (e) => {
         e.preventDefault();
@@ -71,12 +71,13 @@ const Form = (props) => {
 
 
 
-    return (
+    return props.trigger ?  (
+        
         <>
             <div className="wrapper-bg"></div>
             <div className="wrapper">
                 <h1>Create A New Account !</h1>
-                <form onSubmit={submitHandeller} >
+                <form onSubmit={submitHandeller}  >
 
 
                     <div className="inputs-wrapper">
@@ -140,8 +141,8 @@ const Form = (props) => {
 
                         </div>
                         <div className="submit-form-btn">
-                            <button type="submit">Create</button>
-                            <button type="button ">Cancel</button>
+                            <button type="submit"  >Create</button>
+                            <button type="button " onClick={ ()=> props.setTrigger(false)}>Cancel</button>
                         </div>
 
                     </div>
@@ -152,7 +153,7 @@ const Form = (props) => {
             </div>
         </>
 
-    );
+     ) : "";
 }
 
 export default Form;

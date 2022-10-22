@@ -6,10 +6,15 @@ import Form from '../../component/common/form/form-signUp1';
 
 const HomePage = props => {
 
-    const [width, setWindowWidth] = useState(0);
-    const updateDimensions = () => {
-        const width = window.innerWidth
-        setWindowWidth(width)
+    const [Signup, setSignup] = useState(false);
+
+
+
+    const HandelSignUp = () => {
+
+        console.log("signUp button is active !");
+        setSignup(true);
+
     }
 
 
@@ -19,14 +24,14 @@ const HomePage = props => {
         <>
             <div className='home-wrapper'>
                 <div className="SginButtons">
-                    <button className='btn' type="button">Sign up</button>
+                    <button className='btn' type="button" onClick={HandelSignUp}>Sign up</button>
                     <h2>OR</h2>
                     <button className='btn' type="button">Sign in</button>
                 </div>
-                <Form />
+                <Form  trigger={Signup} setTrigger={setSignup}/>
             </div>
-          
-     
+
+
 
             <footer>
                 <Footer />
