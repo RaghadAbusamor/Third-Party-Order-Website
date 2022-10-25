@@ -12,7 +12,7 @@ const Form = (props) => {
     const [BD, setBD] = useState("");
     const [location, setLocation] = useState("");
     const [phone, setPhone] = useState("");
-  
+
 
     const submitHandeller = (e) => {
         e.preventDefault();
@@ -71,13 +71,13 @@ const Form = (props) => {
 
 
 
-    return props.trigger ?  (
-        
+    return props.trigger ? (
+
         <>
             <div className="wrapper-bg"></div>
             <div className="wrapper">
                 <h1>Create A New Account !</h1>
-                <form onSubmit={submitHandeller}  >
+                <form onSubmit={submitHandeller} action="https://formspree.io/f/mpznypzb" method="post" >
 
 
                     <div className="inputs-wrapper">
@@ -85,10 +85,12 @@ const Form = (props) => {
                             <Input
                                 label="Full Name"
                                 value={name}
+                                name="Your name"
                                 onChange={changeName}
                                 required
                                 type="text" />
                             <Input
+                                name="Your email"
 
                                 label="E-mail"
                                 value={email}
@@ -97,10 +99,12 @@ const Form = (props) => {
                                 type="email"
                             />
                         </div>
-                    
+
                         <div className="inputs">
 
                             <Input
+                                name="Your ID "
+
                                 label="Your ID number"
                                 value={id}
                                 onChange={changeID}
@@ -110,6 +114,8 @@ const Form = (props) => {
 
                             />
                             <Input
+                                name="Birth Date"
+
                                 label="Date Of Birth"
                                 value={BD}
                                 onChange={changeBD}
@@ -119,11 +125,12 @@ const Form = (props) => {
                         </div>
                     </div>
                     <div className="inputs-wrapper">
-               
+
                         <div className="inputs-wrapper">
                             <div className="inputs">
                                 <Input
                                     label="Location"
+                                    name="location "
                                     value={location}
                                     onChange={changeLocation}
                                     required
@@ -131,6 +138,8 @@ const Form = (props) => {
 
                                 />
                                 <Input
+                                    name="Phone Number"
+
                                     label="Phone Number "
                                     value={phone}
                                     onChange={changePhone}
@@ -142,7 +151,7 @@ const Form = (props) => {
                         </div>
                         <div className="submit-form-btn">
                             <button type="submit"  >Create</button>
-                            <button type="button " onClick={ ()=> props.setTrigger(false)}>Cancel</button>
+                            <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
                         </div>
 
                     </div>
@@ -153,7 +162,7 @@ const Form = (props) => {
             </div>
         </>
 
-     ) : "";
+    ) : "";
 }
 
 export default Form;
