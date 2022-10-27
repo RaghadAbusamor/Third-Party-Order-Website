@@ -37,7 +37,7 @@
   margin-right: 5px;
 }
 
-.right>button {
+.right>i {
   /* background-color: red; */
   font-size: 50px;
   color: #33C2C7;
@@ -45,5 +45,7 @@
   background: none;
   cursor: pointer;
   user-select: none;
+  font-style: normal;   
+
 
 }

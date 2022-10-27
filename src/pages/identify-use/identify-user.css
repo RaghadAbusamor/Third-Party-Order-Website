@@ -1,0 +1,68 @@
+.user-wrapper{
+    display: flex;
+    justify-content: center;
+    /* background-color: #33C2C7; */
+    box-shadow: 2px 4px 7px 0px rgb(201, 197, 197);
+    background-color: #d2e7e879;
+    padding-bottom: 15rem;
+    padding-top: 1rem;
+
+
+}
+
+.SginButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: yellowgreen; */
+    margin: 20px;
+    padding: 50px;
+
+
+}
+a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SginButtons>a {
+    border: 2px #457172 solid;
+    background-color: #33C2C7;
+    /* background-color: red; */
+    border-radius: 20px;
+    height: 90px;
+    width: 600px;
+    margin: 10px;
+    color: whitesmoke;
+    font-size: larger;
+    font-weight: bolder;
+    box-shadow: #457172 3px 4px 3px 0px;
+    cursor: pointer;
+    user-select: none;
+
+
+}
+.SginButtons>h1 {
+    color: #347a7c;
+    text-shadow: #33c2c7 2px 2px 2px;
+
+}
+.SginButtons>h2 {
+    color: #347a7c;
+    text-shadow: #33c2c7 2px 2px 2px;
+
+}
+
+.user-wrapper>.SginButtons a:hover {
+    border: 3px solid rgb(155, 179, 182);
+    box-shadow: #457172 6px 7px 8px 0px;
+
+
+}
+
+.user-wrapper>.SginButtons a:active {
+    box-shadow: #457172 -7px -5px 7px 0px;
+
+
+}

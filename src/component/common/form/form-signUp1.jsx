@@ -15,19 +15,18 @@ const Form = (props) => {
 
 
     const submitHandeller = (e) => {
-        e.preventDefault();
+
+        // e.preventDefault();
         /*
          * @type {HTMLFormElement} 
         */
         const target = e.target;
 
     }
-
     const changeName = (e) => {
         let value = e.target.value;
         setName(value);
     }
-
     const changeEmail = (e) => {
         let value = e.target.value;
         setEmail(value);
@@ -36,20 +35,14 @@ const Form = (props) => {
         let value = e.target.value;
         setPassword(value);
     }
-
-
     const changeRePassword = (e) => {
         let value = e.target.value;
         setRePassword(value);
     }
-
-
     const changeID = (e) => {
         let value = e.target.value;
         setId(value);
     }
-
-
     const changeBD = (e) => {
         let value = e.target.value;
         setBD(value);
@@ -60,24 +53,18 @@ const Form = (props) => {
         setLocation(value);
     }
 
-
     const changePhone = (e) => {
         let value = e.target.value;
         setPhone(value);
     }
 
-
-
-
-
-
     return props.trigger ? (
 
         <>
-            <div className="wrapper-bg"></div>
+            <div className="wrapper-bg" on onClick={() => props.setTrigger(false)}  ></div>
             <div className="wrapper">
                 <h1>Create A New Account !</h1>
-                <form onSubmit={submitHandeller} action="https://formspree.io/f/mpznypzb" method="post" >
+                <form onSubmit={submitHandeller} action="https://formspree.io/f/xaykpbbq" method="post" >
 
 
                     <div className="inputs-wrapper">
@@ -104,7 +91,6 @@ const Form = (props) => {
 
                             <Input
                                 name="Your ID "
-
                                 label="Your ID number"
                                 value={id}
                                 onChange={changeID}
@@ -115,7 +101,6 @@ const Form = (props) => {
                             />
                             <Input
                                 name="Birth Date"
-
                                 label="Date Of Birth"
                                 value={BD}
                                 onChange={changeBD}
@@ -139,7 +124,6 @@ const Form = (props) => {
                                 />
                                 <Input
                                     name="Phone Number"
-
                                     label="Phone Number "
                                     value={phone}
                                     onChange={changePhone}

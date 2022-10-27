@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { Link } from 'react-router-dom';
+
 import './header.css';
 
 const Header = props => {
@@ -15,7 +15,7 @@ const Header = props => {
         </h1>
       </div>
       <div className="right">
-        <button> ☰</button>
+        <i > ☰</i>
       </div>
     </header>
   );
