@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './form.css';
 
 
-const Form = (props) => {
+const Form2 = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -65,34 +65,26 @@ const Form = (props) => {
         <>
             <div className="wrapper-bg" on onClick={() => props.setTrigger(false)}  ></div>
             <div className="wrapper">
-                <h1>Create A New Account !</h1>
+                <h1>Patron Information</h1>
                 <form onSubmit={submitHandeller} action="https://formspree.io/f/xaykpbbq" method="post" >
 
 
                     <div className="inputs-wrapper">
                         <div className="inputs">
                             <Input
-                                label="Full Name"
+                                label="Patron Full Name"
                                 value={name}
                                 name="Your name"
                                 onChange={changeName}
                                 required
                                 type="text" />
-                            <Input
-                                name="Your email"
 
-                                label="E-mail"
-                                value={email}
-                                onChange={changeEmail}
-                                required
-                                type="email"
-                            />
                         </div>
 
                         <div className="inputs">
 
                             <Input
-                                name="Your ID "
+                                name="Patron Identification Number "
                                 label="Your ID number"
                                 value={id}
                                 onChange={changeID}
@@ -102,8 +94,8 @@ const Form = (props) => {
 
                             />
                             <Input
-                                name="Birth Date"
-                                label="Date Of Birth"
+                                name="Patron Date of Birth"
+                                label="Patron Date of Birth"
                                 value={BD}
                                 onChange={changeBD}
                                 required
@@ -116,7 +108,7 @@ const Form = (props) => {
                         <div className="inputs-wrapper">
                             <div className="inputs">
                                 <Input
-                                    label="Location"
+                                    label="Patron Location"
                                     name="location "
                                     value={location}
                                     onChange={changeLocation}
@@ -125,8 +117,8 @@ const Form = (props) => {
 
                                 />
                                 <Input
-                                    name="Phone Number"
-                                    label="Phone Number "
+                                    name="Patron Phone Number"
+                                    label="Patron Phone Number "
                                     value={phone}
                                     onChange={changePhone}
                                     required
@@ -151,4 +143,4 @@ const Form = (props) => {
     ) : "";
 }
 
-export default Form;
+export default Form2;

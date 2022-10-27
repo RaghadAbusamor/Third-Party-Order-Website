@@ -3,6 +3,7 @@ import HomePage from './pages/home/home';
 import Header from './component/core/header';
 import UserPage from './pages/identify-use/identify-user';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -22,17 +23,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
-      <Header />
 
-      {/* <div className='home'>
+      <BrowserRouter>
+        <Header />
+       
+        {/* <div className='home'>
         <UserPage />
       </div>  */}
 
-     
+
         <Routes>
           <Route path='/home' element={<HomePage />} />
-          <Route path='/user' element={<UserPage/>} />
+          <Route path='/user' element={<UserPage />} />
         </Routes>
 
       </BrowserRouter>
