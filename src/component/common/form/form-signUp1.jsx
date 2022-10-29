@@ -8,8 +8,7 @@ import './form.css';
 const Form = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [rePassword, setRePassword] = useState("");
+
     const [id, setId] = useState("");
     const [BD, setBD] = useState("");
     const [location, setLocation] = useState("");
@@ -33,14 +32,7 @@ const Form = (props) => {
         let value = e.target.value;
         setEmail(value);
     }
-    const changePassword = (e) => {
-        let value = e.target.value;
-        setPassword(value);
-    }
-    const changeRePassword = (e) => {
-        let value = e.target.value;
-        setRePassword(value);
-    }
+  
     const changeID = (e) => {
         let value = e.target.value;
         setId(value);
@@ -98,7 +90,7 @@ const Form = (props) => {
                                 onChange={changeID}
                                 required
                                 pattern="\d*"
-                                maxlength="14"
+                                maxLength="14"
 
                             />
                             <Input
@@ -135,10 +127,13 @@ const Form = (props) => {
                             </div>
 
                         </div>
-                        <div className="submit-form-btn">
-                            <button type="submit"  >Create</button>
-                            <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
-                        </div>
+          
+                            <div className="submit-form-btn">
+                                <button type="submit"  >Create</button>
+                                <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
+
+                            </div>
+         
 
                     </div>
 

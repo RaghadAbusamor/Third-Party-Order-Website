@@ -10,12 +10,12 @@ const Header = props => {
     <header className="webisteHeader">
       <div className="left">
         <h1>
-          <img src="./logo3.svg" alt="Nemo" />
+          <img src="./logo3.svg" alt="TPO" />
           Third party order
         </h1>
       </div>
       <div className="right">
-        <i > ☰</i>
+        <i> ☰</i>
       </div>
     </header>
   );

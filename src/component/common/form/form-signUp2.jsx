@@ -7,9 +7,6 @@ import './form.css';
 
 const Form2 = (props) => {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [rePassword, setRePassword] = useState("");
     const [id, setId] = useState("");
     const [BD, setBD] = useState("");
     const [location, setLocation] = useState("");
@@ -127,6 +124,7 @@ const Form2 = (props) => {
                             </div>
 
                         </div>
+                        
                         <div className="submit-form-btn">
                             <button type="submit"  >Create</button>
                             <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>

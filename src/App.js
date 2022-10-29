@@ -26,13 +26,14 @@ function App() {
 
       <BrowserRouter>
         <Header />
-       
-        {/* <div className='home'>
+        {/*        
+        <div className='home'>
         <UserPage />
       </div>  */}
 
 
         <Routes>
+          <Route path="/*" element={<UserPage />} />
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
         </Routes>
