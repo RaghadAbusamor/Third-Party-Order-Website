@@ -2,7 +2,7 @@ import './App.css';
 import HomePage from './pages/home/home';
 import Header from './component/core/header';
 import UserPage from './pages/identify-use/identify-user';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Navigate} from "react-router-dom";
 import NotFound from './pages/notFound/notfound';
 
 // function App() {
@@ -35,9 +35,11 @@ function App() {
 
 
         <Routes>
-          <Route path="/*" element={<NotFound/>} />
+          {/* <Route path="/*" element={<NotFound/>} /> */}
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
+          <Route path="/*" element={<Navigate to='/user' />} />
+
         </Routes>
 
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import './notFound.css';
 import { ReactComponent as Burger } from '../../assets/illustrations/burger.svg';
 import { Link } from 'react-router-dom';
-import UserPage from '../identify-use/identify-user';
+// import UserPage from '../identify-use/identify-user';
 
 const NotFound = (props) => {
   return (
