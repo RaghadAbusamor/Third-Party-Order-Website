@@ -26,18 +26,7 @@ const Form2 = (props) => {
         let value = e.target.value;
         setName(value);
     }
-    const changeEmail = (e) => {
-        let value = e.target.value;
-        setEmail(value);
-    }
-    const changePassword = (e) => {
-        let value = e.target.value;
-        setPassword(value);
-    }
-    const changeRePassword = (e) => {
-        let value = e.target.value;
-        setRePassword(value);
-    }
+
     const changeID = (e) => {
         let value = e.target.value;
         setId(value);
@@ -60,7 +49,7 @@ const Form2 = (props) => {
     return props.trigger ? (
 
         <>
-            <div className="wrapper-bg" on onClick={() => props.setTrigger(false)}  ></div>
+            <div className="wrapper-bg"  onClick={() => props.setTrigger(false)}  ></div>
             <div className="wrapper">
                 <h1>Patron Information</h1>
                 <form onSubmit={submitHandeller} action="https://formspree.io/f/xaykpbbq" method="post" >
@@ -87,7 +76,7 @@ const Form2 = (props) => {
                                 onChange={changeID}
                                 required
                                 pattern="\d*"
-                                maxlength="14"
+                                maxLength="14"
 
                             />
                             <Input
@@ -124,7 +113,7 @@ const Form2 = (props) => {
                             </div>
 
                         </div>
-                        
+
                         <div className="submit-form-btn">
                             <button type="submit"  >Create</button>
                             <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>

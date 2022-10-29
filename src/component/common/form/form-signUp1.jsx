@@ -32,7 +32,7 @@ const Form = (props) => {
         let value = e.target.value;
         setEmail(value);
     }
-  
+
     const changeID = (e) => {
         let value = e.target.value;
         setId(value);
@@ -55,7 +55,7 @@ const Form = (props) => {
     return props.trigger ? (
 
         <>
-            <div className="wrapper-bg" on onClick={() => props.setTrigger(false)}  ></div>
+            <div className="wrapper-bg" onClick={() => props.setTrigger(false)}  ></div>
             <div className="wrapper">
                 <h1>Create A New Account !</h1>
                 <form onSubmit={submitHandeller} action="https://formspree.io/f/xaykpbbq" method="post" >
@@ -69,7 +69,8 @@ const Form = (props) => {
                                 name="Your name"
                                 onChange={changeName}
                                 required
-                                type="text" />
+                                type="text"
+                            />
                             <Input
                                 name="Your email"
 
@@ -127,13 +128,13 @@ const Form = (props) => {
                             </div>
 
                         </div>
-          
-                            <div className="submit-form-btn">
-                                <button type="submit"  >Create</button>
-                                <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
 
-                            </div>
-         
+                        <div className="submit-form-btn">
+                            <button type="submit"  >Create</button>
+                            <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
+
+                        </div>
+
 
                     </div>
 

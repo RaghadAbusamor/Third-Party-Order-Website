@@ -3,6 +3,7 @@ import HomePage from './pages/home/home';
 import Header from './component/core/header';
 import UserPage from './pages/identify-use/identify-user';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from './pages/notFound/notfound';
 
 // function App() {
 //   return (
@@ -26,6 +27,7 @@ function App() {
 
       <BrowserRouter>
         <Header />
+       
         {/*        
         <div className='home'>
         <UserPage />
@@ -33,7 +35,7 @@ function App() {
 
 
         <Routes>
-          <Route path="/*" element={<UserPage />} />
+          <Route path="/*" element={<NotFound/>} />
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
         </Routes>
