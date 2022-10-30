@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Input from "../input/input";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './form.css';
 
 
-const Form2 = (props) => {
+const FormTow = (props) => {
     const [name, setName] = useState("");
     const [id, setId] = useState("");
     const [BD, setBD] = useState("");
@@ -49,7 +48,7 @@ const Form2 = (props) => {
     return props.trigger ? (
 
         <>
-            <div className="wrapper-bg"  onClick={() => props.setTrigger(false)}  ></div>
+            <div className="wrapper-bg"   ></div>
             <div className="wrapper">
                 <h1>Patron Information</h1>
                 <form onSubmit={submitHandeller} action="https://formspree.io/f/xaykpbbq" method="post" >
@@ -116,7 +115,7 @@ const Form2 = (props) => {
 
                         <div className="submit-form-btn">
                             <button type="submit"  >Create</button>
-                            <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
+                            <button type="button ">Cancel</button>
                         </div>
 
                     </div>
@@ -130,4 +129,4 @@ const Form2 = (props) => {
     ) : "";
 }
 
-export default Form2;
+export default FormTow;

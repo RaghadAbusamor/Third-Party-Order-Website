@@ -4,6 +4,8 @@ import Header from './component/core/header';
 import UserPage from './pages/identify-use/identify-user';
 import { BrowserRouter, Routes, Route ,Navigate} from "react-router-dom";
 import NotFound from './pages/notFound/notfound';
+import Form from './component/common/form/form-signUp1';
+import FormTow from './component/common/form/form-signUp2';
 
 // function App() {
 //   return (
@@ -38,6 +40,7 @@ function App() {
           {/* <Route path="/*" element={<NotFound/>} /> */}
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
+          {/* <Route path='/sginup' element={<FormTow/>} /> */}
           <Route path="/*" element={<Navigate to='/user' />} />
 
         </Routes>

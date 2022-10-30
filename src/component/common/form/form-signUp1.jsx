@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../input/input";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 import './form.css';
 
@@ -13,6 +14,7 @@ const Form = (props) => {
     const [BD, setBD] = useState("");
     const [location, setLocation] = useState("");
     const [phone, setPhone] = useState("");
+    const navigate = useNavigate();
 
 
     const submitHandeller = (e) => {
@@ -22,6 +24,9 @@ const Form = (props) => {
          * @type {HTMLFormElement} 
         */
         const target = e.target;
+        navigate("/sginup");
+        console.log("form submitted")
+        
 
     }
     const changeName = (e) => {
