@@ -10,7 +10,6 @@
     /* remove this line to show the form  !!*    */
     /* display: none; */
 
-
 }
 
 form {
@@ -19,11 +18,10 @@ form {
 }
 
 .wrapper {
-    position: absolute;
     padding: 30px;
     width: 100%;
     text-align: center;
-    max-width: 640px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +34,8 @@ form {
     transform: translate(-50%, -50%);
 
 }
+
+
 
 .wrapper>h1 {
     color: aliceblue;
@@ -51,7 +51,7 @@ form {
     background-color: transparent;
     position: relative;
     top: .5rem;
-    left: 3rem;
+    left: 0rem;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border: 2px solid #3bd9d9;
@@ -65,7 +65,7 @@ form {
     font-weight: 300;
     color: #f5fcfc;
     text-transform: uppercase;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 10px;
 }
 

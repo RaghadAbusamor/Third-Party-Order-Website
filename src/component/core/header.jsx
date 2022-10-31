@@ -8,9 +8,10 @@ const Header = props => {
 
   return (
     <header className="webisteHeader">
+
       <div className="left">
         <h1>
-          <img src="./logo3.svg" alt="TPO" />
+          <img src="/logo3.svg" alt="TPO" />
           Third party order
         </h1>
       </div>

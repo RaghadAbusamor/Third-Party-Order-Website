@@ -1,7 +1,8 @@
+import './form2.css';
 import { useState } from "react";
 import Input from "../input/input";
+import { useNavigate } from 'react-router-dom';
 
-import './form.css';
 
 
 const FormTow = (props) => {
@@ -11,6 +12,7 @@ const FormTow = (props) => {
     const [location, setLocation] = useState("");
     const [phone, setPhone] = useState("");
 
+    const navigate = useNavigate();
 
     const submitHandeller = (e) => {
 
@@ -19,6 +21,8 @@ const FormTow = (props) => {
          * @type {HTMLFormElement} 
         */
         const target = e.target;
+        console.log("form2 submitted");
+
 
     }
     const changeName = (e) => {
@@ -45,7 +49,7 @@ const FormTow = (props) => {
         setPhone(value);
     }
 
-    return props.trigger ? (
+    return (
 
         <>
             <div className="wrapper-bg"   ></div>
@@ -115,7 +119,13 @@ const FormTow = (props) => {
 
                         <div className="submit-form-btn">
                             <button type="submit"  >Create</button>
-                            <button type="button ">Cancel</button>
+                            <button type="button " onClick={
+                                () => {
+                                    console.log("submission cancelled");
+                                    navigate('./user');
+                                }}
+
+                            >Cancel</button>
                         </div>
 
                     </div>
@@ -126,7 +136,7 @@ const FormTow = (props) => {
             </div>
         </>
 
-    ) : "";
+    );
 }
 
 export default FormTow;

@@ -28,7 +28,7 @@ const HomePage = props => {
                     <h2>OR</h2>
                     <button className='btn' type="button">Sign in</button>
                 </div>
-                <Form  trigger={Signup} setTrigger={setSignup}/>
+                <Form  trigger={Signup} setTrigger={setSignup} />
             </div>
 
 

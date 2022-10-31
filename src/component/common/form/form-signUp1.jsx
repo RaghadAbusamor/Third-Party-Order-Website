@@ -24,10 +24,9 @@ const Form = (props) => {
          * @type {HTMLFormElement} 
         */
         const target = e.target;
-        navigate("/sginup");
-        console.log("form submitted")
-        
-
+        navigate("/home/patron");
+        // navigate('/sginup', {replace: true});
+        console.log("form submitted");
     }
     const changeName = (e) => {
         let value = e.target.value;
@@ -135,7 +134,7 @@ const Form = (props) => {
                         </div>
 
                         <div className="submit-form-btn">
-                            <button type="submit"  >Create</button>
+                            <button type="submit">Create</button>
                             <button type="button " onClick={() => props.setTrigger(false)}>Cancel</button>
 
                         </div>

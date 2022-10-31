@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route ,Navigate} from "react-router-dom";
 import NotFound from './pages/notFound/notfound';
 import Form from './component/common/form/form-signUp1';
 import FormTow from './component/common/form/form-signUp2';
+import NFound from './pages/notFound/notF';
+
 
 // function App() {
 //   return (
@@ -29,18 +31,13 @@ function App() {
 
       <BrowserRouter>
         <Header />
-       
-        {/*        
-        <div className='home'>
-        <UserPage />
-      </div>  */}
-
-
+      
         <Routes>
           {/* <Route path="/*" element={<NotFound/>} /> */}
+          {/* <Route path="/*" element={<NFound/>} /> */}
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
-          {/* <Route path='/sginup' element={<FormTow/>} /> */}
+          <Route path='/home/patron' element={<FormTow/>} />
           <Route path="/*" element={<Navigate to='/user' />} />
 
         </Routes>
