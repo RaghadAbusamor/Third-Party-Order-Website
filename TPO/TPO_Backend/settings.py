@@ -130,5 +130,4 @@ EMAIL_PORT = 1025
 
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'TPO_Frontend/build/static'),
-    os.path.join(BASE_DIR, 'TPO_Frontend/public'),
     ]
