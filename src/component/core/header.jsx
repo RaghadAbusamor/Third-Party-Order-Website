@@ -11,7 +11,7 @@ const Header = props => {
 
       <div className="left">
         <h1>
-          <img src="/logo3.svg" alt="TPO" />
+          <img src="./logo3.svg" alt="TPO" />
           Third party order
         </h1>
       </div>

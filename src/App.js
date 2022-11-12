@@ -10,20 +10,6 @@ import NFound from './pages/notFound/notF';
 import Login from './pages/login-page/login';
 
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <div className='home'>
-//       <HomePage />
-//       </div>
-//     </div>
-//   );
-// }
-
-
-{/* <Route path='/company' element={<HomePage />} /> */ }
-
 
 
 function App() {
