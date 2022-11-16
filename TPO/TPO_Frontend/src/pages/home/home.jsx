@@ -2,6 +2,7 @@ import Footer from '../../component/core/footer';
 import './home.css';
 import React, { useState } from 'react';
 import Form from '../../component/common/form/form-signUp1';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = props => {
@@ -26,7 +27,7 @@ const HomePage = props => {
                 <div className="SginButtons">
                     <button className='btn' type="button" onClick={HandelSignUp}>Sign up</button>
                     <h2>OR</h2>
-                    <button className='btn' type="button">Sign in</button>
+                    <Link to={'/login'} className='btn' type="button">Sign in</Link>
                 </div>
                 <Form  trigger={Signup} setTrigger={setSignup} />
             </div>

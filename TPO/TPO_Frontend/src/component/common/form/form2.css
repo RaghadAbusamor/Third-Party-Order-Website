@@ -12,7 +12,7 @@
 
 }
 
-form {
+.wrapper >form {
     display: flex;
     flex-direction: row;
 }

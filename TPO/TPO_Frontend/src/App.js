@@ -7,21 +7,8 @@ import NotFound from './pages/notFound/notfound';
 import Form from './component/common/form/form-signUp1';
 import FormTow from './component/common/form/form-signUp2';
 import NFound from './pages/notFound/notF';
+import Login from './pages/login-page/login';
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <div className='home'>
-//       <HomePage />
-//       </div>
-//     </div>
-//   );
-// }
-
-
-{/* <Route path='/company' element={<HomePage />} /> */ }
 
 
 
@@ -37,6 +24,7 @@ function App() {
           {/* <Route path="/*" element={<NFound/>} /> */}
           <Route path='/home' element={<HomePage />} />
           <Route path='/user' element={<UserPage />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/home/patron' element={<FormTow/>} />
           <Route path="/*" element={<Navigate to='/user' />} />
 
