@@ -5,8 +5,16 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from users.forms import CustomUserCreationForm
+from django.views.generic import CreateView
+from users.forms import CustomerSignUpForm
+from users.models import User
+from django.views.generic import FormView
+from django.urls import reverse_lazy
+
+
 def dashboard(request):
     return render(request, "users/dashboard.html")
+
 # new
 def register(request):
     if request.method == "GET":
@@ -17,3 +25,8 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect(reverse("dashboard"))
+
+class CustomerSignUpView(FormView):
+    form_class = CustomerSignUpForm
+    template_name = 'users/signup_form_customer.html'
+    success_url = '/dashboard'
