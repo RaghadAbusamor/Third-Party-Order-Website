@@ -28,5 +28,5 @@ def register(request):
 
 class CustomerSignUpView(FormView):
     form_class = CustomerSignUpForm
-    template_name = 'users/signup_form_customer.html'
-    success_url = reverse_lazy('login')
+    template_name = 'users/customer_signup.html'
+    success_url = reverse_lazy("login")
