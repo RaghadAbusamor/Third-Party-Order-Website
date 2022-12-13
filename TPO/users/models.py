@@ -26,7 +26,7 @@ class User(AbstractUser):
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    age = models.IntegerField(max_length = 3)
+    age = models.IntegerField()
     def __str__(self):
         return self.user.username
 
