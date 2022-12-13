@@ -7,60 +7,8 @@
 
     <form method="POST">
         {% csrf_token %}
-        <div class="field">
-        <label class="label">Username</label>
-            <div class="control">
-                {{ form.username }}
-            </div>
-        </div>
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-        {{ form.email }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-        {{ form.password1 }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Confirm Password</label>
-        <div class="control">
-        {{ form.password2 }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">Location</label>
-        <div class="control">
-        {{ form.location }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">image</label>
-        <div class="control">
-        {{ form.image }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">age</label>
-        <div class="control">
-        {{ form.age }}
-        </div>
-    </div>
-    <div class="field">
-        <label class="label">phone number</label>
-        <div class="control">
-        {{ form.phone_number }}
-        </div>
-    </div>
-    <div class="field is-grouped">
-        <div class="control">
-        <button type="submit" class="button is-primary">Submit</button>
-        </div>
-        <div class="control">
-        <button type="reset" class="button is-light">Cancel</button>
-        </div>
-    </div>
-</form>
+        {{ form.as_p }}
+        <input type="submit" value="Signup">
+    </form>
+<a href="{% url 'login' %}">Back to login</a>
+{% endblock content %}
