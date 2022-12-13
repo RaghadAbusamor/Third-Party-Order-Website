@@ -3,7 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import RegexValidator
 import uuid
-
+import re
+from django.core.exceptions import ValidationError
 class User(AbstractUser):
     is_customer = models.BooleanField(default=False)
     is_store = models.BooleanField(default=False)
@@ -15,8 +16,13 @@ class User(AbstractUser):
     )
     location = models.CharField( max_length=50)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
-    phone_regex = RegexValidator(regex=r'^\+\d{8,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
-    phone_number = models.CharField(validators=[phone_regex], max_length=16, blank=True) # Validators should be a list
+    phone_number = models.CharField(max_length=16)
+    pattern = re.compile(r'^\+\d{8,15}$')
+
+    def clean(self):
+        if not self.pattern.match(self.phone_number):
+            raise ValidationError('Invalid phone number')
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
