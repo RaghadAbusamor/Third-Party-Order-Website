@@ -2,9 +2,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
-from users.models import Customer, Store, Delivery, User
+from users.models import Customer, Store, Delivery,User
 from django.core.exceptions import ValidationError  
-from django.forms.fields import EmailField
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -14,7 +13,7 @@ class CustomerSignUpForm(UserCreationForm):
     password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  
     phone_number = forms.RegexField(regex=r'^\+?1?\d{9,15}$',
-    error_message = ("Phone number must be entered in the format: '+999999999'. Up to 15 digits is allowed."))
+    message = ("Phone number must be entered in the format: '+999999999'. Up to 15 digits is allowed."))
     age = forms.IntegerField(min_value = 13, max_value= 200)
     image = forms.ImageField()
     location = forms.CharField(max_length=50)
