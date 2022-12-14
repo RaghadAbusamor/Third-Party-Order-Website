@@ -41,4 +41,4 @@ class Store(models.Model):
 class Delivery(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     def __str__(self):
-        return self.user.username
+        return self.user.get_username()

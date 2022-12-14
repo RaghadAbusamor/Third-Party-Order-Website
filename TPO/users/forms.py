@@ -10,7 +10,7 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         fields = UserCreationForm.Meta.fields + ("email",)
 
-class CustomerSignUpForm(UserCreationForm):
+class CustomerSignUpForm(CustomUserCreationForm):
     username = forms.CharField(label='Full User Name',max_length=50)
     password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  

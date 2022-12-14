@@ -10,7 +10,7 @@ from users.forms import CustomerSignUpForm
 from users.models import User
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
-
+from django.http import HttpResponse
 
 def dashboard(request):
     return render(request, "users/dashboard.html")
@@ -26,16 +26,14 @@ def register(request):
             login(request, user)
             return redirect(reverse("dashboard"))
 
-class CustomerSignUpView(CreateView):
-    form_class = CustomerSignUpForm
-    model = User
-    template_name = 'users/customer_signup.html'
-    
-    def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'customer'
-        return super().get_context_data(**kwargs)
-
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect('dashboard')
+def CustomerSignUpView(request):
+    if request.method == "POST":
+        form = CustomerSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return HttpResponse("Thanks for signing up!")
+        else:
+            print(form.errors)
+    else:
+        return render(request, "users/customer_signup.html",{"form": CustomerSignUpForm})
