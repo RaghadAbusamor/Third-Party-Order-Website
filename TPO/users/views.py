@@ -5,10 +5,10 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from users.forms import CustomUserCreationForm
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView, UpdateView
 from users.forms import CustomerSignUpForm
 from users.models import User
-from django.views.generic import FormView
+from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 
 
@@ -26,7 +26,16 @@ def register(request):
             login(request, user)
             return redirect(reverse("dashboard"))
 
-class CustomerSignUpView(FormView):
+class CustomerSignUpView(CreateView):
     form_class = CustomerSignUpForm
+    model = User
     template_name = 'users/customer_signup.html'
-    success_url = reverse_lazy("login")
+    
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'customer'
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('dashboard')

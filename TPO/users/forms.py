@@ -11,6 +11,7 @@ class CustomUserCreationForm(UserCreationForm):
         fields = UserCreationForm.Meta.fields + ("email",)
 
 class CustomerSignUpForm(UserCreationForm):
+    username = forms.CharField(label='Full User Name',max_length=50)
     password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  
     phone_number = forms.CharField(max_length=16, validators=[
