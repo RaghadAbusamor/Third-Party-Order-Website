@@ -22,7 +22,7 @@ class CustomerSignUpForm(CustomUserCreationForm):
         )
     ])
     age = forms.IntegerField(min_value = 13, max_value= 200)
-    image = forms.ImageField()
+    image = forms.ImageField(required=True)
     location = forms.CharField(max_length=50)
     
     def username_clean(self):  

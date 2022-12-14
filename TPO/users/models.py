@@ -16,7 +16,7 @@ class User(AbstractUser):
         editable = False
     )
     location = models.CharField( max_length=50)
-    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    image = models.ImageField(upload_to='uploads/',default="default.jpg")
     phone_number = models.CharField(max_length=16)
     pattern = re.compile(r'^\+\d{8,15}$')
 
