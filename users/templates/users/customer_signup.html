@@ -29,7 +29,7 @@
                       <div class="box">
                         <div class="has-text-primary">
                         <div class="has-text-centered">
-                            <p class="is-size-30"> Create a Customer
+                            <p class="is-size-30"> Create Customer Account
                             </p>
                         </div>
                     </div>
@@ -54,26 +54,11 @@
                             <input class="input is-primary" type="Age" placeholder="Age">
                         </div>
 
-                        <div class="column">
-                        <label for="Name">Image</label>                       
-                        <div class="file is-primary">
-                            <label class="file-label">
-                              <input class="file-input" type="file" name="resume">
-                              <span class="file-cta">
-                                <span class="file-icon">
-                                  <i class="fas fa-upload"></i>
-                                </span>
-                                <span class="file-label">
-                                  Upload Photo...
-                                </span>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-<div>
-
+                   
+<div class="column">
+  <label for="Address">Click to get your Address </label>
     <div id="locationField">
-        <input id="autocomplete" placeholder="Enter your address"
+        <input class="input is-primary" id="autocomplete" placeholder="Enter your address"
                onFocus="geolocate()" type="text"></input>
       </div>
       
@@ -158,15 +143,30 @@
 
 </div>
 
-
-
+<div class="column">
+  <label for="Name">Image</label>                       
+  <div class="file is-primary">
+      <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Upload Photo...
+          </span>
+        </span>
+      </label>
+    </div>
+  </div>
 
 
 
 
                         <div class="column">
-                            <input type="submit" value="Signup">
+                          <button class="button is-primary is-fullwidth" type="submit">Signup</button>
                         </div>
+                       
                         <div class="has-text-centered">
                             <a href="{% url 'login' %}">Back to login</a>                            </p>
                         </div>
