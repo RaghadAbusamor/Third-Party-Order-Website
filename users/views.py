@@ -39,3 +39,7 @@ def CustomerSignUpView(request):
             print(form.errors)
     else:
         return render(request, "users/customer_signup.html",{"form": CustomerSignUpForm})
+
+def signup(request):
+    return render(request, "users/signup.html")
+
