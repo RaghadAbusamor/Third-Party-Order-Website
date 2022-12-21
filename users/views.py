@@ -6,7 +6,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from users.forms import CustomUserCreationForm
 from django.views.generic import CreateView, ListView, UpdateView
-from users.forms import CustomerSignUpForm
+from users.forms import CustomerSignUpForm, StoreSignUpForm
+
 from users.models import User
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
@@ -39,7 +40,21 @@ def CustomerSignUpView(request):
             print(form.errors)
     else:
         return render(request, "users/customer_signup.html",{"form": CustomerSignUpForm})
+        
 
 def signup(request):
-    return render(request, "users/signup.html")
+    return render(request, "registration/signup.html")
+
+
+def StoreSignUpView(request):
+    if request.method == "POST":
+        form = StoreSignUpForm(request.POST, files= request.FILES)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect(reverse('dashboard'))
+        else:
+            print(form.errors)
+    else:
+        return render(request, "users/store_signup.html",{"form": StoreSignUpForm})
 
