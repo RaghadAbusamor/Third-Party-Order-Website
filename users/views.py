@@ -7,7 +7,6 @@ from django.urls import reverse
 from users.forms import CustomUserCreationForm
 from django.views.generic import CreateView, ListView, UpdateView
 from users.forms import CustomerSignUpForm, StoreSignUpForm
-
 from users.models import User
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy

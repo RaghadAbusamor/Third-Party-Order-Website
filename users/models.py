@@ -35,10 +35,12 @@ class Customer(models.Model):
 
 class Store(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    account_name = models.CharField(max_length= 50, default = " Account name ")
     def __str__(self):
         return self.user.get_username()
 
 class Delivery(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    account_name = models.CharField(max_length= 50, default = " Account name ")
     def __str__(self):
         return self.user.get_username()

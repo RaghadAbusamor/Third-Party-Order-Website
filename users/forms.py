@@ -70,8 +70,9 @@ class StoreSignUpForm(CustomUserCreationForm):
             code='invalid_phone_number'
         )
     ])
-    account_image = forms.ImageField(required=True)
+    image = forms.ImageField(required=True)
     account_name = forms.CharField(max_length=50)
+    location = forms.CharField(max_length=50)
     
     def username_clean(self):  
         username = self.cleaned_data['username'].lower()  
@@ -96,13 +97,13 @@ class StoreSignUpForm(CustomUserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'password1', 'password2', 'email','phone_number','image','location')
+        fields = ('username', 'password1', 'password2', 'email','phone_number','image','location','account_name')
 
     def save(self, commit=True):
-        user = super(CustomerSignUpForm, self).save(commit=False)
-        user.is_customer = True
+        user = super(StoreSignUpForm, self).save(commit=False)
+        user.is_store = True
         if commit:
             user.save()
-            customer = Customer(user=user)
-            customer.save()
+            store = Store(user=user,account_name = self.cleaned_data['account_name'])
+            store.save()
         return user
