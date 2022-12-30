@@ -58,3 +58,9 @@ def StoreSignUpView(request):
     else:
         return render(request, "users/store_signup.html",{"form": StoreSignUpForm})
 
+def resetPassword(request):
+     return render(request, "registration/password_reset_form.html")
+
+def resetPasswordDone(request):
+     return render(request, "registration/password_reset_done.html")
+     
