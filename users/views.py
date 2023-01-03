@@ -2,16 +2,18 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.contrib.auth import login
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 from django.urls import reverse
 from users.forms import CustomUserCreationForm
 from django.views.generic import CreateView, ListView, UpdateView
-from users.forms import CustomerSignUpForm, StoreSignUpForm
-from users.models import User
+from users.forms import CustomerSignUpForm, StoreSignUpForm, DeliverySignUpForm,CustomPasswordResetForm,StoreEvaluationForm
+from users.models import User,Store
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-#
+from django.contrib.auth.views import PasswordResetView
+
 def dashboard(request):
     return render(request, "users/dashboard.html")
 
@@ -56,4 +58,41 @@ def StoreSignUpView(request):
             print(form.errors)
     else:
         return render(request, "users/store_signup.html",{"form": StoreSignUpForm})
+
+
+
+class CustomPasswordResetView(PasswordResetView):
+    form_class = CustomPasswordResetForm
+    success_url = reverse_lazy('resetPasswordDone')
+    template_name = 'registration/password_reset_form.html'
+
+class PasswordResetDoneView(TemplateView):
+    template_name = 'registration/password_reset_done.html'
+
+def DeliverySignUpView(request):
+    if request.method == "POST":
+        form = DeliverySignUpForm(request.POST, files= request.FILES)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect(reverse('dashboard'))
+        else:
+            print(form.errors)
+    else:
+        return render(request, "users/Delivery_signup.html",{"form": DeliverySignUpForm})
+
+def evaluate_store(request, store_id):
+    store = get_object_or_404(Store, pk=store_id)
+    if request.method == 'POST':
+        form = StoreEvaluationForm(request.POST)
+        if form.is_valid():
+            evaluation = form.save(commit=False)
+            evaluation.store = store
+            evaluation.user = request.user
+            evaluation.save()
+            return redirect('store_detail', store_id=store.id)
+    else:
+        form = StoreEvaluationForm()
+    return render(request, 'stores/evaluate.html', {'form': form, 'store': store})
+
 

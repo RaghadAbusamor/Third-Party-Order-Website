@@ -128,3 +128,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+EMAIL_FILE_BACKEND_DIRECTORY = EMAIL_FILE_PATH

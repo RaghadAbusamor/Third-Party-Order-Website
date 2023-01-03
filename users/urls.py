@@ -1,13 +1,15 @@
 from django.urls import path,include
-from users.views import dashboard,register,CustomerSignUpView, about, signup, StoreSignUpView#,SignUpView,StoreSignUpView,DeliverySignUpView
+from users.views import dashboard,register,CustomerSignUpView,DeliverySignUpView, about, signup, StoreSignUpView,CustomPasswordResetView, PasswordResetDoneView#,SignUpView,StoreSignUpView,DeliverySignUpView
 urlpatterns = [
     path("", dashboard, name="dashboard"),
-    path('accounts/signup/customer/', CustomerSignUpView, name="CustomerSignUpView"),
+    path('accounts/signup/customer/', CustomerSignUpView, name="customer_signup"),
     path("accounts/signup/", signup , name="signup"),
-    path('accounts/signup/store/', StoreSignUpView, name="StoreSignUpView"),
+    path('accounts/signup/store/', StoreSignUpView, name="store_signup"),
+    path('accounts/signup/delivery/', DeliverySignUpView, name="delivery_signup"),
+    path("accounts/resetPassword/",  CustomPasswordResetView.as_view(), name="resetPassword"),
+    path("accounts/resetPassword/done", PasswordResetDoneView.as_view(), name="resetPasswordDone"),
     path("accounts/", include("django.contrib.auth.urls")),
     #path('oauth/', include('social_django.urls', namespace="social")),
-    #path('accounts/signup/delivery/', DeliverySignUpView.as_view(), name='delivery_signup'),
     path("register/", register, name="register"),
     path("about/",about, name="about"),
     
