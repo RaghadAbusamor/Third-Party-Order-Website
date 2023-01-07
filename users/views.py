@@ -13,6 +13,7 @@ from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth.decorators import login_required
 
 def dashboard(request):
     return render(request, "users/dashboard.html")
@@ -45,6 +46,7 @@ def CustomerSignUpView(request):
 
 def signup(request):
     return render(request, "registration/signup.html")
+
 
 
 def StoreSignUpView(request):
@@ -95,4 +97,9 @@ def evaluate_store(request, store_id):
         form = StoreEvaluationForm()
     return render(request, 'stores/evaluate.html', {'form': form, 'store': store})
 
+
+
+def userprofile(request):
+    profile = CustomerSignUpForm()
+    return render(request, "users/user_profile.html", {"profile": profile})
 
