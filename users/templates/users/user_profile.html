@@ -38,9 +38,9 @@
 
                     <p class="title is-4">{{ user.username}}</p>
                     <div>
-                    <label class="subtitle is-6" id="userID">User ID: 12345</label>
+                    <label id="my-label" class="subtitle is-6" id="userID">User ID: 12345</label>
                     <div class="buttons is-right">
-                      <button class="button is-primary is-rounded" onclick="copyToClipboard()"><i class="fas fa-copy"></i></button>
+                      <button id="copy-btn" class="button is-primary is-rounded">Copy ID</button>
                     </div>
                   </div>
                   </div>
@@ -59,22 +59,28 @@
   <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'password_change' %}` ">password change</button>
     </div>
 
-      <script>
-        function copyToClipboard() {
-        var copyText = document.getElementById("userID");
+     
+<script>
+  var copyBtn = document.getElementById("copy-btn");
+  copyBtn.addEventListener("click", copyLabel);
+  function copyLabel() {
+    var label = document.getElementById("my-label");
+    var textToCopy = label.innerText;
 
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
+    // Create a hidden textarea element
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
 
-            // Copy the text inside the text field
-            navigator.clipboard.writeText(copyText.value);
+    // Copy the text to the clipboard
+    document.execCommand("copy");
 
-            // Alert the copied text
-            alert("Copied the user ID: " + copyText.value);
-                  }
-      </script>
-
+    // Remove the textarea element
+    document.body.removeChild(textArea);
+    alert('Copied the text: ' + textToCopy);
+  }
+</script>
     </body>
   </html>
   {% else %}
