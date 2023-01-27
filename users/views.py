@@ -14,6 +14,9 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+import logging
+logger = logging.getLogger(__name__)
 
 def dashboard(request):
     return render(request, "users/dashboard.html")
@@ -99,5 +102,15 @@ def evaluate_store(request, store_id):
 def userprofile(request):
     profile = CustomerSignUpForm()
     return render(request, "users/user_profile.html", {"profile": profile})
+
+
+# Example usage in a view function
+def my_view(request):
+    # some code here
+    logger.debug("This is a debug message.")
+    logger.info("This is an info message.")
+    logger.warning("This is a warning message.")
+    logger.error("This is an error message.")
+    return HttpResponse("Hello World!")
 
 

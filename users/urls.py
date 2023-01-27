@@ -1,5 +1,5 @@
 from django.urls import path,include
-from users.views import dashboard,register,CustomerSignUpView,DeliverySignUpView, about, signup, StoreSignUpView,CustomPasswordResetView, PasswordResetDoneView, userprofile#,SignUpView,StoreSignUpView,DeliverySignUpView
+from users.views import dashboard,register,CustomerSignUpView,DeliverySignUpView, about, signup, StoreSignUpView,CustomPasswordResetView, PasswordResetDoneView, userprofile,my_view#,SignUpView,StoreSignUpView,DeliverySignUpView,
 urlpatterns = [
     path("", dashboard, name="dashboard"),
     path('accounts/signup/customer/', CustomerSignUpView, name="customer_signup"),
@@ -13,5 +13,6 @@ urlpatterns = [
     #path('oauth/', include('social_django.urls', namespace="social")),
     path("register/", register, name="register"),
     path("about/",about, name="about"),
+    path('my_view/', my_view, name='my_view'),
     
 ]
