@@ -38,8 +38,15 @@
     </head>
 
     <body>
-       
+      
         <div class="container" >
+          {% if messages %}
+          <div class="notification is-danger">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif%}
           <form method="POST" enctype="multipart/form-data" >
                 {% csrf_token %}
             <div class="columns">
@@ -126,7 +133,7 @@
                         </div>
                        
                         <div class="has-text-centered">
-                            <a href="{% url 'login' %}">Back to login</a>                            </p>
+                            <a href="{% url 'users:login' %}">Back to login</a>                            </p>
                         </div>
                     </div>
                 </div>
@@ -137,5 +144,4 @@
     </body>
 
 </html>
-
 {% endblock %}

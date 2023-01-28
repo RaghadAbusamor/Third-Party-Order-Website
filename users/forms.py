@@ -170,3 +170,6 @@ class StoreEvaluationForm(forms.ModelForm):
     class Meta:
         model = StoreEvaluation
         fields = ['rating', 'comment']
+        widgets = {
+        'comment': forms.Textarea(attrs={'rows':4, 'cols':15}),
+        }

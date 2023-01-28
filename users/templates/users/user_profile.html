@@ -22,6 +22,13 @@
         <div class="columns is-centered">
           <div class="column is-half">
             <div class="card">
+              {% if messages %}
+          <div class="notification is-success">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif%}
               <div class="card-image">
                 <figure class="image is-3by1">
                   <img src="https://via.placeholder.com/1280x720" alt="User Cover Photo">
@@ -31,14 +38,15 @@
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-128x128">
-                      <img class="is-rounded" src="https://via.placeholder.com/128x128" alt="User Photo">
+                      <img class="is-rounded" src="{{ user.image.url }}" alt="User Image">
                     </figure>
                   </div>
                   <div class="media-content">
 
                     <p class="title is-4">{{ user.username}}</p>
                     <div>
-                      <label id="my-label" class="subtitle is-6" id="userID">User ID: 12345</label>
+                      <br>
+                      <label id="my-label" class="subtitle is-6" id="userID">User ID: {{user.id}}</label>
                     <div class="buttons is-right">
                       <button id="copy-btn" class="button is-primary is-rounded">Copy ID</button>
                     </div>
@@ -46,18 +54,65 @@
                   </div>
                 </div>
                 <div class="content">
-                  <p><i class="fas fa-map-marker-alt"></i>profile.location</p>
+                  <p><i class="fas fa-map-marker-alt"></i>location: {{user.location}}</p>
+                  {% if user.is_customer %}
+                  <p>Age: {{ user.customer.age }}</p>
+                  {% endif %}
+                  <p>Phone number: {{ user.phone_number }}</p>
                 </div>
+          
               </div>
             </div>
+            <br>
+            
+              {% if user.is_customer %}
+              <div class="card">
+                <div class="card-content">
+                <form method="post" action="{% url 'users:store_evaluation' %}">
+                  {% csrf_token %}
+                  <div class="field">
+                    <label class="label">Store</label>
+                    <div class="control">
+                      <div class="select">
+                        <select name="store">
+                          {% for store in stores %}
+                            <option value="{{ store.pk}}">{{ store.account_name }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">Rating</label>
+                    <div class="control">
+                      <input class="input" type="number" name="rating" min="1" max="5">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label">Comment</label>
+                    <div class="control">
+                      <textarea class="textarea" name="comment"></textarea>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-primary is-rounded" type="submit">Submit Evaluation</button>
+                    </div>
+                  </div>
+                </form>
+              {% endif %}
+            </div>
+          </div>
+            <br>
+            <div class="card" >
+              <div class="card-content">
+              <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:logout' %}` ">Log out</button>
+          <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:password_change' %}` ">password change</button>
+            </div>
+          </div>
           </div>
         </div>
       </div>
-      
-    <div class="box" >
-      <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'logout' %}` ">Log out</button>
-  <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'password_change' %}` ">password change</button>
-    </div>
 
     <script>
       var copyBtn = document.getElementById("copy-btn");

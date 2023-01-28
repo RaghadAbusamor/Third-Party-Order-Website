@@ -6,12 +6,12 @@
     <div class="column is-size-30">
 <div class="box" >
 {% if user.is_authenticated %}
-  <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'logout' %}` ">Log out</button>
-  <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'password_change' %}` ">password change</button>
+  <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:logout' %}` ">Log out</button>
+  <button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:password_change' %}` ">password change</button>
 {% else %}
 
-<button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'login' %}` ">Log in</button>
-<button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'signup' %}` ">Sign up</button>
+<button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:login' %}` ">Log in</button>
+<button class="button is-primary is-outlined is-large has-text-centered " onclick="location.href=`{% url 'users:signup' %}` ">Sign up</button>
 {% endif %}
 </div>
 </div>
